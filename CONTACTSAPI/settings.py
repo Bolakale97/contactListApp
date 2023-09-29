@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -97,10 +98,21 @@ WSGI_APPLICATION = 'CONTACTSAPI.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'demodb_sy4e',
+        'USER': 'demodb_sy4e_user',
+        'PASSWORD': '6JJXEukyvSct0SJXfXIJ2xFptMH1YIki',
+        'HOST': 'dpg-ckarj9msmu8c73e8pk20-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
 
@@ -152,8 +164,8 @@ CORS_ORIGIN_WHITELIST = [
 
 # JWT
 
-# JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
-JWT_SECRET_KEY = 'JWT_SECRET_KEYJWT_SECRET_KEYJWT_SECRET_KEY_KEYS'
+JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
+# JWT_SECRET_KEY = 'JWT_SECRET_KEYJWT_SECRET_KEYJWT_SECRET_KEY_KEYS'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

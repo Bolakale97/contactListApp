@@ -59,7 +59,7 @@ SWAGGER_SETTINGS = {
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_jwt.authentication.JWTAuthentication',
+        'pyjwt.authentication.JWTAuthentication',
     ],
     'JWT_AUTH': {
         'JWT_ENCODE_HANDLER': 'rest_framework_jwt.utils.jwt_encode_handler',

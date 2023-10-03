@@ -8,3 +8,5 @@ psycopg2
 sqlparse
 django_heroku
 python-decouple
+rest_framework_jwt
+datetime

@@ -2,4 +2,4 @@ release: python manage.py makemigrations --no-input
 release: python manage.py migrate --no-input
 
 
-web: gunicorn --debug CONTACTSAPI.wsgi: application
+web: gunicorn --debug CONTACTSAPI.wsgi

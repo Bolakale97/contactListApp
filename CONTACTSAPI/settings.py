@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import datetime
 import os
 from pathlib import Path
 import django_heroku
@@ -58,27 +57,10 @@ SWAGGER_SETTINGS = {
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'pyjwt.authentication.JWTAuthentication',
-    ],
-    'JWT_AUTH': {
-        'JWT_ENCODE_HANDLER': 'rest_framework_jwt.utils.jwt_encode_handler',
-        'JWT_DECODE_HANDLER': 'rest_framework_jwt.utils.jwt_decode_handler',
-        'JWT_PAYLOAD_HANDLER': 'rest_framework_jwt.utils.jwt_payload_handler',
-        'JWT_PAYLOAD_GETTER': 'rest_framework_jwt.utils.jwt_get_user_id_from_payload_handler',
-        'JWT_SECRET_KEY': 'secret',
-        'JWT_ALGORITHM': 'HS256',
-        'JWT_VERIFY': True,
-        'JWT_VERIFY_EXPIRATION': True,
-        'JWT_LEEWAY': 0,
-        'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=3000),
-        'JWT_AUDIENCE': None,
-        'JWT_ISSUER': None,
-        'JWT_ALLOW_REFRESH': True,
-        'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
-    },
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'authentication.backends.JWTAuthentication',
+    ),
 }
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

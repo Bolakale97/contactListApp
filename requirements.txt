@@ -1,5 +1,4 @@
-pip
-JWT
+jwt
 djangorestframework
 drf-yasg
 django-cors-headers
@@ -8,3 +7,4 @@ gunicorn
 psycopg2
 sqlparse
 django_heroku
+python-decouple

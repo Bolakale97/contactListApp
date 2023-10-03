@@ -4,4 +4,4 @@ release: python manage.py migrate --no-input
 
 web: gunicorn wsgi:CONTACTSAPI
 
-gunicorn --debug CONTACTSAPI:app
+gunicorn --debug CONTACTSAPI:contacts
